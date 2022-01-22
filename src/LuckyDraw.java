@@ -193,15 +193,15 @@ public class LuckyDraw extends KeyAdapter{
 		Random rand = new Random(); //instance of random class
 		Thread updateUIThread = new Thread(() ->
         { 
-            try {
-            	while(userList.size()>0) {
-					//從箱子取出用戶
+			try {
+				while(userList.size()>0) {
+					//從籤筒取出用戶
 					User user = userList.get(rand.nextInt(userList.size()));
-					//從籤桶移除用戶
+					//從籤筒移除用戶
 					userList.remove(user);
-					//從箱子取出物件
+					//從籤筒取出物件
 					String item = itemList.get(rand.nextInt(itemList.size()));
-					//從簽筒移除物件
+					//從籤筒移除物件
 					itemList.remove(item);
 					//在表格顯示抽中結果
 					tableModel.setValueAt(item, user.getIndex(), 1);
@@ -214,12 +214,12 @@ public class LuckyDraw extends KeyAdapter{
 					jframe.repaint();
 					//停頓delay秒
 					Thread.sleep(delay*1000);
-        		}
-            }
-            catch (Exception ex) {
-                System.out.println(ex);
-            }
-            saveData();
+				}
+			}
+			catch (Exception ex) {
+			    System.out.println(ex);
+			}
+			saveData();
         });
         updateUIThread.start();
 	}
