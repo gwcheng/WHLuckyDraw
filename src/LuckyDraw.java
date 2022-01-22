@@ -152,7 +152,7 @@ public class LuckyDraw extends KeyAdapter{
 			fw.close();
 			
 			JOptionPane.showConfirmDialog(null, 
-	                "抽籤完畢，檔案已儲存至"+resultFile, "",JOptionPane.DEFAULT_OPTION);
+			        "抽籤完畢，檔案已儲存至"+resultFile, "",JOptionPane.DEFAULT_OPTION);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -195,25 +195,25 @@ public class LuckyDraw extends KeyAdapter{
         { 
             try {
             	while(userList.size()>0) {
-            		//從箱子取出用戶
-        			User user = userList.get(rand.nextInt(userList.size()));
-        			//從籤桶移除用戶
-        			userList.remove(user);
-        			//從箱子取出物件
-        			String item = itemList.get(rand.nextInt(itemList.size()));
-        			//從簽筒移除物件
-        			itemList.remove(item);
-        			//在表格顯示抽中結果
-        			tableModel.setValueAt(item, user.getIndex(), 1);
-        			//反白抽中的用戶
-        			resultTable.changeSelection(user.getIndex(), 0,false,false);
-        			//將結果顯示在左邊社窗
-        			String result = String.format(resultFormat, user.getUser(), item);
-        			drawLabel.setText(result);
-        			//重新整理畫面
-        			jframe.repaint();
-        			//停頓delay秒
-        			Thread.sleep(delay*1000);
+					//從箱子取出用戶
+					User user = userList.get(rand.nextInt(userList.size()));
+					//從籤桶移除用戶
+					userList.remove(user);
+					//從箱子取出物件
+					String item = itemList.get(rand.nextInt(itemList.size()));
+					//從簽筒移除物件
+					itemList.remove(item);
+					//在表格顯示抽中結果
+					tableModel.setValueAt(item, user.getIndex(), 1);
+					//反白抽中的用戶
+					resultTable.changeSelection(user.getIndex(), 0,false,false);
+					//將結果顯示在左邊社窗
+					String result = String.format(resultFormat, user.getUser(), item);
+					drawLabel.setText(result);
+					//重新整理畫面
+					jframe.repaint();
+					//停頓delay秒
+					Thread.sleep(delay*1000);
         		}
             }
             catch (Exception ex) {
