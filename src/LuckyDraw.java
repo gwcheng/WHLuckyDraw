@@ -19,7 +19,7 @@ public class LuckyDraw extends KeyAdapter {
 	public static int WINDOW_HEIGHT = 0;
 
 	String resultFormat = "%s 抽中 %s";
-	String title = "LuckyDraw";
+	String title = "富宇文匯社區專用抽籤程式";
 	String font = "微軟正黑體";
 	float delay = 1;
 	int itemCols = 10;
