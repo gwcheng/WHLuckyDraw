@@ -62,6 +62,7 @@ public class LuckyDraw extends KeyAdapter {
 		startPanel.add(startButton, BorderLayout.CENTER);
 
 		itemPanel = new JPanel();
+		itemPanel.setBorder(BorderFactory.createTitledBorder("抽籤目標"));
 
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,7 +86,7 @@ public class LuckyDraw extends KeyAdapter {
 		leftPanel.setLayout(new BorderLayout());
 		leftPanel.add(tablePanel, BorderLayout.CENTER);
 		leftPanel.add(startPanel, BorderLayout.SOUTH);
-		leftPanel.setBorder(BorderFactory.createTitledBorder("Information"));
+		leftPanel.setBorder(BorderFactory.createTitledBorder("抽籤結果"));
 
 		rightPanel = new JPanel();
 		rightPanel.setLayout(new BorderLayout());
@@ -102,7 +103,7 @@ public class LuckyDraw extends KeyAdapter {
 		rightPanel.add(drawPanel, BorderLayout.CENTER);
 		rightPanel.add(itemPanel, BorderLayout.SOUTH);
 
-		rightPanel.setBorder(BorderFactory.createTitledBorder("Draw"));
+		rightPanel.setBorder(BorderFactory.createTitledBorder("訊息"));
 
 		contentPane.add(leftPanel, BorderLayout.WEST);
 		contentPane.add(rightPanel, BorderLayout.CENTER);
