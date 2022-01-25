@@ -235,7 +235,7 @@ public class LuckyDraw extends KeyAdapter {
 					tableModel.setValueAt(item.name, user.index, 1);
 					// 反白抽中的用戶
 					resultTable.changeSelection(user.index, 0, false, false);
-					// 將結果顯示在左邊視窗
+					// 將結果顯示在右邊視窗
 					String result = String.format(resultFormat, user.name, item.name);
 					drawLabel.setText(result);
 					// 儲存結果
